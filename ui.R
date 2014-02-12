@@ -7,7 +7,7 @@ shinyUI(pageWithSidebar(
   headerPanel("Expression of Genes in gEUvadis"),
   
   sidebarPanel(
-    textInput("gene", "Gene ID:", "ENSG00000000419"),
+    textInput("gene", "Gene ID:", "ENSMUSG00000059751"),
     submitButton("Update View")
   ),
   
