@@ -51,7 +51,9 @@ shinyServer(function(input, output, session) {
                 col_order <- 1:ncol(d)
             }
             
-
+            scale = "none"
+            if (input$scale)
+                scale = "row"
             pheatmap(d[,col_order], color=my_palette,
                      show_rownames=F, cluster_cols = cluscol,
                      scale="row",
