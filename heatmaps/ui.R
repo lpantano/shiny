@@ -11,7 +11,7 @@ shinyUI(pageWithSidebar(
     actionButton("do","Update View"),
     fluidPage(h3("Help"),
               br(),
-              p("table should be a CSV file with header. First column will be used to look for gene names.")
+              p("table should be a CSV file with header. First column will be used to look for gene names."),
               p("Gene names should be separared by spaces, and be in the same ID than the table."),
               p("Column order should be numbers indicating the index in the table.")
               )
