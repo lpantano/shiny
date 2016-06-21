@@ -7,7 +7,7 @@ shinyUI(pageWithSidebar(
     checkboxInput("doroworder", "Cluster row", 0),
     checkboxInput("docolorder", "Cluster col", 0),
     checkboxInput("scale", "Scale row", 1),
-    textInput("gene", "Gene ID:", ""),
+    textInput("gene", "List of Gene IDs:", ""),
     actionButton("do","Update View"),
     fluidPage(h3("Help"),
               br(),

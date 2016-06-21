@@ -8,6 +8,7 @@ shinyServer(function(input, output, session) {
     deg <- list()
     loadData <- function(path){
         deg <<-read.csv(path, row.names=1)
+        updateTextInput(session, "gene", value = paste(rownames(deg)[1:20], collapse = " "))
     }
     
    observe({
@@ -24,9 +25,11 @@ shinyServer(function(input, output, session) {
     }else{
         g <- unlist(strsplit(input$gene, split = " "))
         stopifnot(length(g)>0)
+        if (length(g)>3000)
+            stop("Maximum number of genes 3000.")
         g <- intersect(g, rownames(deg))
         stopifnot(length(g)>0)
-        d<-as.matrix(deg[g,])
+        d <- as.matrix(deg[g,])
         d <- d[rowSums(d)>0,]
         if (!input$doroworder)
             return(d)
